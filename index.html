@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex_2</title>
+    <link rel="icon" type="image/icon type" href="./img/pokemon-ball.png">
+    <script src="script/script.js"></script>
+    <script src="script/filter2.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="loadPokemons()">
+
+    <header>
+        <div class="headerLeft">
+        <div class="title">P<img src="img/pokemon-ball.png" alt="">KEDEX</div>
+        
+       </div>
+       
+        <div class="headerRight">
+            <button id="buttonBack" class="buttonBack button d-none" onclick="mainPage()">back</button>
+            <input id="input" class="input" type="text">
+            <button class="button" onclick="loadFilterdPokemons()">search</button>
+        </div>
+    </header>
+
+    <div id="mainContainer" class="mainContainer"> </div>
+
+    <div id="layover" onclick="closeInfoCard()" class="layover d-none">
+        <div id="infoCard" class="infoCard">
+            <div id="infoCardAbove" class="infoCardAbove"></div>
+            <div id="infoCardProperty" class="infoCardProperty"></div>
+            <div id="infoCardBelow" class="infoCardBelow"></div>
+        </div>
+    </div>
+
+    <div id="filterdPokemon" class="filterdPokemon d-none">  
+        <div id="filterdPokemonContainer" class="filterdPokemonContainer"></div>
+    </div>
+
+    <footer class="footer d-none">
+        <button id="buttonBackBelow" class="buttonBack button d-none" onclick="mainPage()">back</button>
+        <input id="inputBelow" class="input" type="text">
+        <button class="button" onclick="loadFilterdPokemons()">search</button>
+    </footer>
+</body>
+
+</html>
