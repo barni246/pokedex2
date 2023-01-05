@@ -274,7 +274,7 @@ header {
 @media(max-width:700px) {
 
     body {
-        background-image: url('img/space.jpg');
+        background-image: url('img/space2.png');
         background-size: cover;
         background-attachment: fixed;
     }
