@@ -1,5 +1,7 @@
-let pokemonArray = []; 
-let filterdPokemon = []; 
+let pokemonArray = [];
+let filterdPokemon = [];
+let correctInput = false;
+
 
 async function loadFilterdPokemons() {
 
@@ -8,8 +10,27 @@ async function loadFilterdPokemons() {
     let response = await fetch(urlLoad);
     let responseAsJson = await response.json();
     let pokemonResults = responseAsJson['results'];
-   // fillFilterdPokemon();
-   inputValid();
+    inputValid(pokemonResults);
+    clearInputFields();
+}
+
+
+async function inputValid(pokemonResults) {
+    fillFilterdPokemon();
+    let inputValue = document.getElementById('input').value;
+    let inputValueBelow = document.getElementById('inputBelow').value;
+    if (inputValue == '' && inputValueBelow == '') {
+        mainPage();
+    } else if (correctInput) {
+        queryElseIf(pokemonResults);
+    } else {
+        mainPage();
+    }
+    correctInput = false;
+}
+
+
+async function queryElseIf(pokemonResults) {
     for (let j = 0; j < filterdPokemon.length; j++) {
         const filterdPokemonOfArray = filterdPokemon[j];
         for (let i = 0; i < pokemonResults.length; i++) {
@@ -19,21 +40,6 @@ async function loadFilterdPokemons() {
             let responseServerAsJson = await responseServer.json();
             showFilterdPokemons(responseServerAsJson, pokemonName, filterdPokemonOfArray, i);
         }
-    }
-    clearInputFields();
-}
-
-
-function inputValid() {
-    let inputValue = document.getElementById('input').value;
-    let inputValueBelow = document.getElementById('inputBelow').value;
-    if(inputValue == '' && inputValueBelow == '') {
-        document.getElementById('buttonBack').classList.add('d-none');
-        document.getElementById('buttonBackBelow').classList.add('d-none');
-        return;
-    }
-    else {
-        fillFilterdPokemon();
     }
 }
 
@@ -68,14 +74,14 @@ function initFilterContainer() {
 
 
 function fillFilterdPokemon() {
-   let search = document.getElementById('input').value;
+    let search = document.getElementById('input').value;
     let searchBelow = document.getElementById('inputBelow').value;
     search = search.toLowerCase();
     searchBelow = searchBelow.toLowerCase();
     for (let index = 0; index < pokemonArray.length; index++) {
         let element = pokemonArray[index];
         if (element.toLowerCase().includes(search) && element.toLowerCase().includes(searchBelow)) {
-            
+            correctInput = true;
             filterdPokemon.push(element);
         }
     }
@@ -83,7 +89,7 @@ function fillFilterdPokemon() {
 
 
 function renderFilterdCard(pokemonName, pokemonImage, i) {
-    document.getElementById('filterdPokemonContainer').innerHTML += `
+    document.getElementById('filterdPokemonContainer').innerHTML += /*html*/ `
                 
     <div id="card${i}" onclick="showInfoCard('${pokemonName}')" class="card">
         <div id="cardAboveFilter${i}" class="cardAbove">
@@ -92,8 +98,7 @@ function renderFilterdCard(pokemonName, pokemonImage, i) {
         <div id="cardBelowFilter${i}" class="cardBelow">
             <img class="pokemonImage" src="${pokemonImage}">
         </div>
-    </div>
-    `;
+    </div> `;
 }
 
 

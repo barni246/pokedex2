@@ -2,7 +2,7 @@ body {
     margin: 0;
     display: flex;
     justify-content: center;
-    background-image: url(img/pokemon-1619924_1920.jpg);
+    background-image: url('img/pokemon-1619924_1920.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-position: 50% 50% !important;
@@ -75,6 +75,7 @@ header {
     align-items: center;
     gap: 8px;
 }
+
 .mainContainer {
     width: 80%;
     min-height: 100vh;
@@ -103,7 +104,7 @@ header {
 
 .cardAbove {
     width: 130px;
-   
+
 }
 
 .card:hover {
@@ -172,6 +173,15 @@ header {
 
 }
 
+.closeInfoCard {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
 .InfoCardPokemonImage img {
     width: 180px;
     height: 180px;
@@ -234,7 +244,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
 
 .filterdPokemonContainer {
@@ -246,14 +256,12 @@ header {
     width: 80vw;
     gap: 20px;
     margin-top: 50px;
-   
+
 }
 
 .filterdPokemonContainer::-webkit-scrollbar {
     display: none;
 }
-
-
 
 @keyframes turn {
 
@@ -263,18 +271,20 @@ header {
     }
 }
 
-@media(max-width:600px) {
+@media(max-width:700px) {
 
     body {
-        background-image: none;
-        background-color: black;
+        background-image: url('img/space.jpg');
+        background-size: cover;
+        background-attachment: fixed;
     }
+
     .headerRight {
         display: none;
 
     }
 
-    header{
+    header {
         padding-left: 0;
         padding-right: 0;
         justify-content: center;
@@ -285,7 +295,7 @@ header {
         bottom: 0;
         right: 0;
         left: 0;
-        height: 80px;
+        height: 50px;
         background-color: black;
         display: flex !important;
         justify-content: center;
@@ -295,5 +305,9 @@ header {
 
     .card {
         width: 350px;
+    }
+
+    .closeInfoCard {
+        display: block !important;
     }
 }

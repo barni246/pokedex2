@@ -9,6 +9,7 @@
     <link rel="icon" type="image/icon type" href="./img/pokemon-ball.png">
     <script src="script/script.js"></script>
     <script src="script/filter2.js"></script>
+    <script src="script/infoCard.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -16,10 +17,10 @@
 
     <header>
         <div class="headerLeft">
-        <div class="title">P<img src="img/pokemon-ball.png" alt="">KEDEX</div>
-        
-       </div>
-       
+            <div class="title">P<img src="img/pokemon-ball.png" alt="">KEDEX</div>
+
+        </div>
+
         <div class="headerRight">
             <button id="buttonBack" class="buttonBack button d-none" onclick="mainPage()">back</button>
             <input id="input" class="input" type="text">
@@ -30,14 +31,15 @@
     <div id="mainContainer" class="mainContainer"> </div>
 
     <div id="layover" onclick="closeInfoCard()" class="layover d-none">
-        <div id="infoCard" class="infoCard">
+        <div id="infoCard" onclick="stopPropagation(event);" class="infoCard">
+            <div class="closeInfoCard d-none" onclick="closeInfoCard()">X</div>
             <div id="infoCardAbove" class="infoCardAbove"></div>
             <div id="infoCardProperty" class="infoCardProperty"></div>
             <div id="infoCardBelow" class="infoCardBelow"></div>
         </div>
     </div>
 
-    <div id="filterdPokemon" class="filterdPokemon d-none">  
+    <div id="filterdPokemon" class="filterdPokemon d-none">
         <div id="filterdPokemonContainer" class="filterdPokemonContainer"></div>
     </div>
 
