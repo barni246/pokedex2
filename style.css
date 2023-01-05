@@ -6,8 +6,9 @@ body {
     background-size: cover;
     background-attachment: fixed;
     background-position: 50% 50% !important;
-    min-height: 100vh;
+    min-height: 2000px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
 }
 
 header {
@@ -16,7 +17,6 @@ header {
     left: 0;
     right: 0;
     z-index: 1;
-    height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -78,13 +78,15 @@ header {
 
 .mainContainer {
     width: 80%;
-    min-height: 100vh;
-    margin-top: 150px;
+    height: 90%;
+    margin-top: 160px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     gap: 15px;
-    padding-bottom: 50px;
+    margin-bottom: 100px;
+    
 }
 
 .card {
@@ -288,14 +290,18 @@ header {
         padding-left: 0;
         padding-right: 0;
         justify-content: center;
+        padding-bottom: 15px;
+        padding-top: 5px;
+    }
+
+    .headerLeft {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 5px;
     }
 
     .footer {
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        height: 50px;
         background-color: black;
         display: flex !important;
         justify-content: center;

@@ -18,6 +18,11 @@
     <header>
         <div class="headerLeft">
             <div class="title">P<img src="img/pokemon-ball.png" alt="">KEDEX</div>
+            <footer class="footer d-none">
+                <button id="buttonBackBelow" class="buttonBack button d-none" onclick="mainPage()">BACK</button>
+                <input id="inputBelow" class="input" type="text">
+                <button class="button" onclick="loadFilterdPokemons()">SEARCH</button>
+            </footer>
 
         </div>
 
@@ -43,11 +48,7 @@
         <div id="filterdPokemonContainer" class="filterdPokemonContainer"></div>
     </div>
 
-    <footer class="footer d-none">
-        <button id="buttonBackBelow" class="buttonBack button d-none" onclick="mainPage()">BACK</button>
-        <input id="inputBelow" class="input" type="text">
-        <button class="button" onclick="loadFilterdPokemons()">SEARCH</button>
-    </footer>
+   
 </body>
 
 </html>
